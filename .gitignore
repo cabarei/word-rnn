@@ -1,0 +1,6 @@
+#Ignore these directories
+__pycache__
+save*
+
+#ignore these files
+*.pyc
