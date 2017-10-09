@@ -1,0 +1,421 @@
+********************************************
+python train.py --rnn_size 512 --num_layers 3 --model lstm --batch_size 40 --seq_length 20 --num_epochs 100
+
+(30 mins / loss 0.5)
+********************************************
+	
+-------
+default
+-------
+
+the ocean blooming! 
+ a red day 
+
+ short dawn 
+ on the top of the mist 
+ your faces of stone 
+
+ plowing it grows... 
+ the beggar-town 
+ dance in the mist 
+
+ blowing out 
+ of the plum trees bloom... 
+ "happy new year!" 
+
+ about human live 
+ cold door hand... 
+ mountain field 
+
+ the hoe for last 
+ flowing too 
+ would long it 
+
+ among the dewdrops... 
+ the tiny horse's back 
+ is blown 
+
+ sweeping his appointment 
+ without quickly... 
+ wildflower 
+
+ morning after blossoms, 
+ o fussing 
+ in its autumn 
+
+ beyond the hole 
+ to the unlucky direction... 
+ a croaking frog 
+
+ it's a temple color 
+ with a seat of reeds 
+ bending 
+
+ one rain, 
+ all the sake, lets up 
+ hot off them up... 
+
+ spring breeze 
+ the coaxing hill 
+ goes in her temple 
+
+ the green young 
+ gate... 
+ spring mist 
+
+ autumn mountain, 
+ at the crossroads winter's 
+ snowfall 
+
+ winter wind 
+ he's a peek 
+ from a matchi 
+
+ pooping too 
+ passes with time 
+ his birthday alone 
+
+ spring rain, 
+ just one mist
+
+-------
+default
+-------
+
+the ocean work a crackling 
+ at swept too 
+ crawls, his trees 
+
+ flies 
+ under a paper robe 
+ in the middle 
+
+ smack in the smile 
+ needs a dog 
+ heads 
+
+ on a little puppy 
+ this year this mosquitoes 
+ rises 
+
+ such a waterfall 
+ over a children 
+ about them 
+
+ tomorrow's night, 
+ there are you they learned 
+ to plow still 
+
+ this pine tree is people 
+ by one leg... 
+ deep shinano 
+
+ moon and bustle 
+ the dragonfly also 
+ standing away 
+
+ heat shimmers, 
+ splashed from people 
+ days 
+
+ old fishing calls 
+ to an new year... 
+ still sweeping cloth-pounding 
+
+ a gambling sermon 
+ even this island 
+ are these lights 
+
+ dry rain 
+ on falling trees even 
+ for within our year 
+
+ drooping 
+ of cogon old 
+ they are back 
+
+ kiso vine 
+ acting are part! 
+ raise edo... 
+ autumn sun 
+
+ the priest's fart 
+ chews 
+ with plum blossom sea 
+
+ does the sermon 
+ will tiny characters... 
+
+ even melting by 
+ or willow night... 
+ the mount champion 
+
+ a edo cat 
+ walking
+
+-------
+--pick 2
+-------
+
+the ocean is a bag 
+on tiptoe 
+on the cold 
+
+taking up within 
+the new year's gift... 
+paper fan 
+
+the mountain cool leaves 
+coaxes 
+this first dawn 
+
+my home village, 
+in the dirt farmer 
+hot bath steam 
+
+one night 
+a pile of shinano 
+torments me 
+
+come to go flowers 
+at the downpour... 
+camellias 
+
+even in the thicket 
+pooping in the temple... 
+first winter rain 
+
+first winter month 
+tenth day... 
+a cold night 
+
+dyeing the eaves 
+it fall and flap... 
+paper fan 
+
+sucking on 
+the rubbish bucket... 
+autumn wind 
+
+the big snow 
+is allowed to play... 
+new summer robe 
+
+
+
+-------
+--width 8
+-------
+
+the ocean is the man 
+ singing with money... 
+ dark cherry blossoms 
+
+ basking 
+ by a mountain's world 
+ blossoms! 
+
+ hazy moon, 
+ at the ox square call 
+ her butt cheeks 
+
+ blossoming grass, 
+ even now a devil 
+ likes my home 
+
+ is my eyes 
+ across mount tachida... 
+ a firefly hopscotch 
+
+ ripples in water, 
+ foolishly playing 
+ to edo 
+
+ from the soot 
+ facing the eaves... 
+ little cloudburst 
+
+ chickens it's no thin walk 
+ let the tree and them 
+ tall prayer 
+
+ where under the thicket 
+ "gimme its offering blooms... 
+ fleas 
+
+ singing they're 
+ the buddha falls... 
+ sound tolls 
+
+ they've bloomed 
+ toward the pine... 
+ my hot field 
+
+ incense shop again 
+ not flies and go... 
+ deutzia blossoms 
+
+ nightingale 
+ come up... 
+ okazaki old corner of a houses 
+
+ silver join 
+ by the bathhouse place... 
+ a night singing 
+
+ in the thicket 
+ a greeting croaking 
+ frog 
+
+ the baby monkey 
+ passes from his charm... 
+ kyoto 
+
+ moss month, 
+ you're with they sleep... 
+ roses of sharon 
+
+ new red shoots 
+
+
+-------
+--sample 0
+-------
+
+the ocean is the shack 
+ she sits 
+ the cleaner's moon... 
+
+ on drinking sky, 
+ one comes... 
+ lowering the basket 
+
+ taking his head 
+ is a new year... 
+ evening cool 
+
+ a village child 
+ chews on a pipe... 
+ evening cool 
+
+ a rooster flaps and home 
+ so butterflies, 
+ he sleeps 
+
+ in the long day 
+ they husk short... 
+ new summer robe 
+
+ no lazing at the gate 
+ they go! 
+ new year's day! 
+
+ to the storehouse 
+ even on the year's first day 
+ rice field geese 
+
+ mountain temple, 
+ among the threshold 
+ blooming camellias 
+
+ when a glance 
+ at the cooking square 
+ mount tsukuba 
+
+ a pheasant cries, 
+ bedded down in its old keg 
+ fireflies 
+
+ the crow 
+ has allowed his steps... 
+ a frog 
+
+ from the cloudburst 
+ he turns out... 
+ pure water 
+
+ in the long day 
+ this world's dewdrops 
+ is swept 
+
+ a big smoke, 
+ even for a farmhouse 
+ my house 
+
+ maybe this view 
+ of the secret god... 
+ little butterfly 
+
+ little straw mat, 
+ when did they come
+
+-------
+--sample 2
+-------
+
+the ocean is the shack 
+ she sits 
+ the cleaner's moon... 
+
+ on drinking sky, 
+ one comes... 
+ lowering the basket 
+
+ taking his head 
+ is a new year... 
+ evening cool 
+
+ a village child 
+ chews on a pipe... 
+ evening cool 
+
+ a rooster flaps and home 
+ so butterflies, 
+ he sleeps 
+
+ in the long day 
+ they husk short... 
+ new summer robe 
+
+ no lazing at the gate 
+ they go! 
+ new year's day! 
+
+ to the storehouse 
+ even on the year's first day 
+ rice field geese 
+
+ mountain temple, 
+ among the threshold 
+ blooming camellias 
+
+ when a glance 
+ at the cooking square 
+ mount tsukuba 
+
+ a pheasant cries, 
+ bedded down in its old keg 
+ fireflies 
+
+ the crow 
+ has allowed his steps... 
+ a frog 
+
+ from the cloudburst 
+ he turns out... 
+ pure water 
+
+ in the long day 
+ this world's dewdrops 
+ is swept 
+
+ a big smoke, 
+ even for a farmhouse 
+ my house 
+
+ maybe this view 
+ of the secret god... 
+ little butterfly 
+
+ little straw mat, 
+ when did they come
