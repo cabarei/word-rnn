@@ -1,5 +1,4 @@
-print("\nloading...")
-
+from __future__ import print_function
 import numpy as np
 import tensorflow as tf
 
@@ -13,11 +12,8 @@ from model import Model
 
 os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
 
-
 stop_keyword = "xxxxxx "
 linebreak_keyword = "xxx "
-division_line = "-"*26
-
 
 
 def main():
@@ -46,53 +42,23 @@ def main():
     #  sample(args)
 
 
-
 def sample(args):
-
-    print("\nthinking haikus...", end="\n\n\n")
-
     with open(os.path.join(args.save_dir, 'config.pkl'), 'rb') as f:
         saved_args = cPickle.load(f)
     with open(os.path.join(args.save_dir, 'words_vocab.pkl'), 'rb') as f:
         words, vocab = cPickle.load(f)
     model = Model(saved_args, True)
-
-
     with tf.Session() as sess:
-
         tf.global_variables_initializer().run()
-
         saver = tf.train.Saver(tf.global_variables())
         ckpt = tf.train.get_checkpoint_state(args.save_dir)
-
         if ckpt and ckpt.model_checkpoint_path:
             saver.restore(sess, ckpt.model_checkpoint_path)
-
-            samples = []
-
             for i in range(args.number):
               sample = model.sample(sess, words, vocab, args.n, args.starting_with, args.sample, args.pick, args.width, args.haiku)
-              samples.append(sample)
-
-            show_haikus(samples)
-
-
-
-def show_haikus(haikus):
-
-    print(division_line)
-
-    for haiku in haikus:
-        print("")
-
-        haiku_verse = haiku.split(stop_keyword)
-        haiku = haiku_verse[1] #if len(haiku_verse) > 1 else ""
-        haiku = haiku.replace(linebreak_keyword, "\n")
-
-        print(haiku, end="\n\n")
-        input(division_line)
-
-
-
+              sample_split = sample.split(stop_keyword)
+              sample = sample_split[1] if len(sample_split) > 1 else ""
+              sample = sample.replace(linebreak_keyword, "\n")
+              print(sample, end="\n\n")
 if __name__ == '__main__':
     main()

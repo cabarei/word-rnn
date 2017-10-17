@@ -26,6 +26,7 @@ def main():
                        help='0 to use max at each timestep, 1 to sample at each timestep, 2 to sample on spaces')
 
     args = parser.parse_args()
+
     sample(args)
 
 def sample(args):
