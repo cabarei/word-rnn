@@ -4,8 +4,8 @@ mode = "hsue"
 
 function post_to_server(words){
 
-	var server_url = "http://localhost:8080/" + mode;
-	// var server_url = "http://34.249.147.24:8080/" + mode;
+	// var server_url = "http://localhost:8080/" + mode;
+	var server_url = "http://34.249.147.24:8080/" + mode;
 
 	console.log("posting to " + server_url);
 
@@ -48,7 +48,7 @@ function process_answer(answer){
 
 function show_haikus(haikus){
 
-	$(".haicku_box").empty();
+	$(".haiku_box").empty();
 
 	for (i in haikus){
 		haiku = haikus[i];
@@ -58,12 +58,14 @@ function show_haikus(haikus){
 
 		for (j in verses){
 			verse = verses[j];
-			$(".haicku_box").append("<br/>"+verse);
+			$(".haiku_box").append("<br/>"+verse);
 		}
 
-		$(".haicku_box").append("<br/><br/>-----------------<br/>");
+		$(".haiku_box").append("<br/><br/>***<br/>");
 
 	}
+
+	$(".haiku_box").fadeIn(1000);
 
 }
 
@@ -71,7 +73,6 @@ function show_haikus(haikus){
 
 function show_hsue(hsue){
 
-	// $(".haicku_box").empty();
-	$(".haicku_box").append("<br/><br/>"+hsue);
+	$(".haiku_box").append("<br/><br/>"+hsue);
 
 }

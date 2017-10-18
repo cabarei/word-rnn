@@ -3,6 +3,20 @@ body{
 	color: white;
 }
 
-.box_info{
-	margin: 100px;
+#text_input{
+	border: solid 1px white;
+    background-color: black;
+    color: #ddd;
+    font-size: 24px;
+    padding: 6px 12px;
+    width: 200px;
+    /*text-align: center;*/
+}
+
+.haiku_box{
+	margin: 40px;
+	text-align: center;
+	font-size: 18px;
+	line-height: 24px;
+	font-family: serif;
 }

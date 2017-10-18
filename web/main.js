@@ -24,18 +24,19 @@ function resize_elements(){
 
 $(window).keydown(function(e){
 	
-	// console.log(e.keyCode);
+	console.log(e.keyCode);
 
-	if (e.keyCode == 80){ //p
-		post_to_server("the moon");
-	}
+	// if (e.keyCode == 80){ //p
+	// 	post_to_server("the moon");
+	// }
 
 	if (e.keyCode == 13){ //intro
 		mode = "haikus"
+		$(".haiku_box").fadeOut(500);
 		post_to_server($("#text_input").val());
 		$("#text_input").val("");
 	}
-	if (e.keyCode == 40){ //intro
+	if (e.keyCode == 38){ //up
 		mode = "hsue"
 		post_to_server($("#text_input").val());
 		$("#text_input").val("");
