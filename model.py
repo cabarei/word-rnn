@@ -8,7 +8,9 @@ from beam import BeamSearch
 
 
 class Model():
+
     def __init__(self, args, infer=False):
+
         self.args = args
         if infer:
             args.batch_size = 1
@@ -39,6 +41,7 @@ class Model():
         self.batch_time = tf.Variable(0.0, name="batch_time", trainable=False)
         tf.summary.scalar("time_batch", self.batch_time)
 
+
         def variable_summaries(var):
             """Attach a lot of summaries to a Tensor (for TensorBoard visualization)."""
             with tf.name_scope('summaries'):
@@ -51,7 +54,9 @@ class Model():
                 tf.summary.scalar('min', tf.reduce_min(var))
                 #tf.summary.histogram('histogram', var)
 
+
         with tf.variable_scope('rnnlm'):
+
             softmax_w = tf.get_variable("softmax_w", [args.rnn_size, args.vocab_size])
             variable_summaries(softmax_w)
             softmax_b = tf.get_variable("softmax_b", [args.vocab_size])
@@ -60,6 +65,7 @@ class Model():
                 embedding = tf.get_variable("embedding", [args.vocab_size, args.rnn_size])
                 inputs = tf.split(tf.nn.embedding_lookup(embedding, self.input_data), args.seq_length, 1)
                 inputs = [tf.squeeze(input_, [1]) for input_ in inputs]
+
 
         def loop(prev, _):
             prev = tf.matmul(prev, softmax_w) + softmax_b
@@ -84,18 +90,19 @@ class Model():
         optimizer = tf.train.AdamOptimizer(self.lr)
         self.train_op = optimizer.apply_gradients(zip(grads, tvars))
 
+
     def sample(self, sess, words, vocab, num=200, prime='first all', sampling_type=1, pick=0, width=4, haiku=False):
         def weighted_pick(weights):
             t = np.cumsum(weights)
             s = np.sum(weights)
             return(int(np.searchsorted(t, np.random.rand(1)*s)))
 
+
         def beam_search_predict(sample, state):
             """Returns the updated probability distribution (`probs`) and
             `state` for a given `sample`. `sample` should be a sequence of
             vocabulary labels, with the last word to be tested against the RNN.
             """
-
             x = np.zeros((1, 1))
             x[0, 0] = sample[-1]
             feed = {self.input_data: x, self.initial_state: state}

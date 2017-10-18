@@ -1,6 +1,7 @@
 import json
 from http.server import *
 import makeahaiku_server
+import sample_server
 
 
 def processImage(str_img):
@@ -12,35 +13,40 @@ class GetHandler(BaseHTTPRequestHandler):
     def do_POST(self):
 
         print("post received!")
-      
-        if self.path.endswith("/makehaikus"):
 
-            content_len = int(self.headers['Content-Length'])
-            post_body = self.rfile.read(content_len)
+        content_len = int(self.headers['Content-Length'])
+        post_body = self.rfile.read(content_len)
 
-            post_data = str(post_body.decode('utf-8'))
-            json_data = json.loads(post_data)
+        post_data = str(post_body.decode('utf-8'))
+        json_data = json.loads(post_data)
 
-            words = json_data["words"]
+        words = json_data["words"]
 
+        if self.path.endswith("/haikus"):
 
             # haikus = words
-            haikus = makeahaiku_server.main(words)
-            haikus_json = json.dumps(haikus)
+            answer = makeahaiku_server.main(words)
+            answer_json = json.dumps(answer)
+
+        if self.path.endswith("/hsue"):
+
+            # haikus = words
+            answer = sample_server.main(words, 100)
+            answer_json = json.dumps(answer)
 
 
-            self.send_response(200)
-            self.send_header("Content-type", "application/json")
-            self.send_header("Access-Control-Allow-Origin", "*")
-            #self.send_header("Access-Control-Expose-Headers", "Access-Control-Allow-Origin")
-            self.end_headers()
+        self.send_response(200)
+        self.send_header("Content-type", "application/json")
+        self.send_header("Access-Control-Allow-Origin", "*")
+        #self.send_header("Access-Control-Expose-Headers", "Access-Control-Allow-Origin")
+        self.end_headers()
 
-            json_response = {"haikus": haikus_json};
-            json_response = json.dumps(json_response)
-            
-            self.wfile.write(bytes(json_response, 'utf-8'))
+        json_response = {"data": answer_json};
+        json_response = json.dumps(json_response)
+        
+        self.wfile.write(bytes(json_response, 'utf-8'))
 
-            print("sending answer")
+        print("sending answer")
 
 
 
