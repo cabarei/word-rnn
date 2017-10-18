@@ -20,8 +20,10 @@ division_line = "-"*26
 
 
 
-def main():
+def main(starting_words):
+
     parser = argparse.ArgumentParser()
+
     parser.add_argument('--save_dir', type=str, default='save',
                        help='model directory to load stored checkpointed models from')
     parser.add_argument('-n', type=int, default=30,
@@ -38,13 +40,15 @@ def main():
 
     args = parser.parse_args()
     args.haiku = True
-    args.starting_with = stop_keyword + args.starting_with
+    args.starting_with = stop_keyword + starting_words
 
-    sample(args)
+    return sample(args)
 
 
 
 def sample(args):
+
+    tf.reset_default_graph()
 
     print("\nthinking haikus...", end="\n\n\n")
 
@@ -71,7 +75,9 @@ def sample(args):
               sample = model.sample(sess, words, vocab, args.n, args.starting_with, args.sample, args.pick, args.width, args.haiku)
               samples.append(sample)
 
-            show_haikus(samples)
+            # show_haikus(samples)
+
+    return samples
 
 
 

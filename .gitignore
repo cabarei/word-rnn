@@ -2,7 +2,5 @@ __pycache__
 *.ipynb_checkpoints
 *.pyc
 
-savemovies
-save/*
-!save/*.pkl
+save*
 samples.txt

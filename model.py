@@ -6,6 +6,7 @@ import numpy as np
 
 from beam import BeamSearch
 
+
 class Model():
     def __init__(self, args, infer=False):
         self.args = args
@@ -101,6 +102,7 @@ class Model():
             [probs, final_state] = sess.run([self.probs, self.final_state],
                                             feed)
             return probs, final_state
+
 
         def beam_search_pick(prime, width):
             """Returns the beam search pick."""
