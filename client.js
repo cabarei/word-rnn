@@ -5,8 +5,7 @@ mode = "hsue"
 function post_to_server(words){
 
 	var server_url = "http://localhost:8080/" + mode;
-	// var server_url = "http://localhost:8080/hsue";
-	// var server_url = "http://34.249.147.24:8080/haikus";
+	// var server_url = "http://34.249.147.24:8080/" + mode;
 
 	console.log("posting to " + server_url);
 

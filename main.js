@@ -31,6 +31,12 @@ $(window).keydown(function(e){
 	}
 
 	if (e.keyCode == 13){ //intro
+		mode = "haikus"
+		post_to_server($("#text_input").val());
+		$("#text_input").val("");
+	}
+	if (e.keyCode == 40){ //intro
+		mode = "hsue"
 		post_to_server($("#text_input").val());
 		$("#text_input").val("");
 	}
