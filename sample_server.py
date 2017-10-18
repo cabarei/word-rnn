@@ -29,6 +29,7 @@ def main(words, sample_length):
 
     args = parser.parse_args()
 
+    args.save_dir = "model_hsue"
     args.prime = words
     args.n = sample_length
 

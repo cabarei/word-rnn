@@ -39,6 +39,8 @@ def main(starting_words):
     parser.add_argument('--number', type=int, default=10, help='number of samples')
 
     args = parser.parse_args()
+    
+    args.save_dir = "model_haiku"
     args.haiku = True
     args.starting_with = stop_keyword + starting_words
 
