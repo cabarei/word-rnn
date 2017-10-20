@@ -22,9 +22,9 @@ class GetHandler(BaseHTTPRequestHandler):
 
         words = json_data["words"]
 
-        print(data)
+        print(words)
 
-        
+
         if self.path.endswith("/test"):
             answer_json = json.dumps("ok")
 
