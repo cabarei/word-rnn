@@ -3,6 +3,7 @@ body{
 	color: white;
 }
 
+
 #text_input{
 	border: solid 1px white;
     background-color: black;
@@ -13,10 +14,30 @@ body{
     /*text-align: center;*/
 }
 
+
 .haiku_box{
 	margin: 40px;
 	text-align: center;
 	font-size: 18px;
 	line-height: 24px;
 	font-family: serif;
+}
+
+
+
+.verse{
+	margin: 2px;
+}
+
+
+.single-word{
+	cursor: pointer;
+	background-color: rgba(0,0,0,0);
+    -webkit-transition: background-color 0.5s;
+    -moz-transition: background-color 0.5s;
+    -ms-transition: background-color 0.5s;
+    transition: background-color 0.5s;
+}
+.single-word:hover{
+	background-color: #444;
 }
