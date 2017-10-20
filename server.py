@@ -22,7 +22,9 @@ class GetHandler(BaseHTTPRequestHandler):
 
         words = json_data["words"]
 
+        print(data)
 
+        
         if self.path.endswith("/test"):
             answer_json = json.dumps("ok")
 
@@ -40,7 +42,7 @@ class GetHandler(BaseHTTPRequestHandler):
 
         else:
 
-            print "Petition not understood"
+            print("bad petition")
             return
 
 
