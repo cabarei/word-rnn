@@ -1,8 +1,5 @@
-// mode = "haikus"
-mode = "hsue"
 
-
-function post_to_server(words){
+function post_to_server(words, testing=false){
 
 	// var server_url = "http://localhost:8080/" + mode;
 	var server_url = "http://34.249.147.24:8080/" + mode;
@@ -16,10 +13,12 @@ function post_to_server(words){
 		data: JSON.stringify({"words": words}),
 		success: function (answer){
 			console.log(answer);
-			process_answer(answer);
+			if (!testing) process_answer(answer);
+			$("#text_input").show();
 		},
 		error: function( error ){
 			console.log("error:", error);
+			alert("no server connection");
 		}
 	})
 
@@ -58,7 +57,7 @@ function show_haikus(haikus){
 
 		for (j in verses){
 			verse = verses[j];
-			$(".haiku_box").append("<br/>"+verse);
+			$(".haiku_box").append("<br/><p>"+verse+"</p>");
 		}
 
 		$(".haiku_box").append("<br/><br/>***<br/>");
@@ -67,6 +66,7 @@ function show_haikus(haikus){
 
 	$(".haiku_box").fadeIn(1000);
 
+	split_words();
 }
 
 
@@ -75,4 +75,22 @@ function show_hsue(hsue){
 
 	$(".haiku_box").append("<br/><br/>"+hsue);
 
+	split_words();
+}
+
+
+function split_words(){ 
+
+	for (i in $("p")){
+		$p = $($("p")[i]);
+		var words = $p.text().split( /\s+/ );  
+		var text = words.join( "</span> <span>" );  
+		$p.html( "<span>" + text + "</span>" );  
+	}
+
+	$( "span" ).on( "click", function() {  
+		if ($(this).text().length > 2) {
+			$( this ).css( "background-color", "red" );  
+		}
+	})
 }

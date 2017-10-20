@@ -12,7 +12,7 @@ class GetHandler(BaseHTTPRequestHandler):
 
     def do_POST(self):
 
-        print("post received!")
+        print("*post received")
 
         content_len = int(self.headers['Content-Length'])
         post_body = self.rfile.read(content_len)
@@ -22,17 +22,27 @@ class GetHandler(BaseHTTPRequestHandler):
 
         words = json_data["words"]
 
-        if self.path.endswith("/haikus"):
+
+        if self.path.endswith("/test"):
+            answer_json = json.dumps("ok")
+
+        elif self.path.endswith("/haikus"):
 
             # haikus = words
             answer = makeahaiku_server.main(words)
             answer_json = json.dumps(answer)
 
-        if self.path.endswith("/hsue"):
+        elif self.path.endswith("/hsue"):
 
             # haikus = words
             answer = sample_server.main(words, 100)
             answer_json = json.dumps(answer)
+
+        else:
+
+            print "Petition not understood"
+            return
+
 
 
         self.send_response(200)
@@ -46,7 +56,7 @@ class GetHandler(BaseHTTPRequestHandler):
         
         self.wfile.write(bytes(json_response, 'utf-8'))
 
-        print("sending answer")
+        print("*answer sent")
 
 
 

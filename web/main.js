@@ -5,11 +5,13 @@ $( function() {
 
 	init_params();
 
+	try_server();
+
 })
 
 
 function init_params(){
-
+	mode = "haikus"
 }
 
 
@@ -27,7 +29,7 @@ $(window).keydown(function(e){
 	console.log(e.keyCode);
 
 	// if (e.keyCode == 80){ //p
-	// 	post_to_server("the moon");
+	// 	post_to_server("test");
 	// }
 
 	if (e.keyCode == 13){ //intro
@@ -43,3 +45,10 @@ $(window).keydown(function(e){
 	}
 
 })
+
+
+
+function try_server(){
+	mode = "test";
+	post_to_server("this is a test", true);
+}
