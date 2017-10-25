@@ -140,11 +140,10 @@ function show_haikus(haikus){
 	var count = 0;
 
 	for (i in haikus){
+
 		haiku = haikus[i];
 
-		haiku = haiku.replace("piss", "water");
-		haiku = haiku.replace('"', '');
-		haiku = haiku.replace("'", "");
+		haiku = clean_haiku(haiku);
 
 		haiku = haiku.split("xxxxxx")[1];
 		verses = haiku.split("xxx");
@@ -179,6 +178,12 @@ function show_haikus(haikus){
 
 }
 
+
+
+function clean_haiku(haiku){
+	
+	return haiku.replace(/piss/g , "water").replace(/["']/g, "");
+}
 
 
 function fade_haikus(){

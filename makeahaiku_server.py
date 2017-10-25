@@ -22,8 +22,6 @@ division_line = "-"*26
 
 def main(starting_words):
 
-    print(main)
-
     parser = argparse.ArgumentParser()
 
     parser.add_argument('--save_dir', type=str, default='save',
@@ -54,7 +52,7 @@ def sample(args):
 
     tf.reset_default_graph()
 
-    print("\nthinking haikus...", end="\n\n\n")
+    print("thinking haikus...", end="\n")
 
     with open(os.path.join(args.save_dir, 'config.pkl'), 'rb') as f:
         saved_args = cPickle.load(f)
@@ -78,8 +76,6 @@ def sample(args):
             for i in range(args.number):
               sample = model.sample(sess, words, vocab, args.n, args.starting_with, args.sample, args.pick, args.width, args.haiku)
               samples.append(sample)
-
-            # show_haikus(samples)
 
     return samples
 
@@ -105,9 +101,6 @@ def save_haiku(content):
 
     with open("haiku_favs.txt", "a") as f:
         f.write("\n".join(content.strip().split("xxx")))
-        # for line in content.split("xxx"):
-        #     f.write(line)
-        #     print(line)
         f.write("\n\n")
 
 
