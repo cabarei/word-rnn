@@ -40,6 +40,14 @@ class GetHandler(BaseHTTPRequestHandler):
             answer = sample_server.main(words, 100)
             answer_json = json.dumps(answer)
 
+        elif self.path.endswith("/save"):
+
+            # haikus = words
+            makeahaiku_server.save_haiku(words)
+            print("saved")
+            answer = "saved"
+            answer_json = json.dumps(answer)
+
         else:
 
             print("bad petition")

@@ -22,6 +22,8 @@ division_line = "-"*26
 
 def main(starting_words):
 
+    print(main)
+
     parser = argparse.ArgumentParser()
 
     parser.add_argument('--save_dir', type=str, default='save',
@@ -96,6 +98,17 @@ def show_haikus(haikus):
 
         print(haiku, end="\n\n")
         input(division_line)
+
+
+
+def save_haiku(content):
+
+    with open("haiku_favs.txt", "a") as f:
+        f.write("\n".join(content.strip().split("xxx")))
+        # for line in content.split("xxx"):
+        #     f.write(line)
+        #     print(line)
+        f.write("\n\n")
 
 
 

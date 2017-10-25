@@ -16,13 +16,21 @@ body{
 
 
 .haiku_box{
-	margin: 40px;
+	margin-top: 60px;
 	text-align: center;
-	font-size: 18px;
-	line-height: 24px;
-	font-family: serif;
+	font-size: 24px;
+	line-height: 32px;
+	font-family: 'Kalam', cursive;
+	font-weight: 300;
 }
 
+
+.single_haiku_box{
+	text-align: center;
+}
+.single_haiku_box.saved{
+	background-color: #444;
+}
 
 
 .verse{
@@ -40,4 +48,13 @@ body{
 }
 .single-word:hover{
 	background-color: #444;
+}
+
+
+
+.no-select{
+	-webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
