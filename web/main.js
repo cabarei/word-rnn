@@ -5,7 +5,7 @@ $( function() {
 
 	init_params();
 
-	try_server();
+	setTimeout(function(){ try_server(); }, 200);
 
 })
 
